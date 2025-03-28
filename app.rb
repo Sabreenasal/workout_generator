@@ -40,6 +40,7 @@ get("/random_workouts") do
     workout = workouts.first
 
     @workout_details = "Name: #{workout["name"]}\nType: #{workout["type"]}\nMuscle: #{workout["muscle"]}\nEquipment: #{workout["equipment"]}\nDifficulty: #{workout["difficulty"]}\nInstructions: #{workout["instructions"]}"
+       @workout_image = "dumbbells-2465478_1280.jpg"
   end
   @workouts = workouts
   erb(:random)

@@ -1,25 +1,34 @@
 <style>
   body {
-    background-color:rgba(233, 243, 243, 0.99);
+    background: linear-gradient(135deg, #f6d365, #fda085); 
     font-family: 'Georgia', serif;
     margin: 0;
     padding: 0;
+    text-transform: uppercase; 
+   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);   
+  letter-spacing: 1.5px;
   }
 
   .workout-instructions {
   padding: 15px;
   background-color: #f9f9f9;
+  background: linear-gradient(145deg, #ffedbc, #fffcf9);
   margin-bottom: 20px;
   max-width: 100%;
+  margin-right: 15px;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  color: #333;
+  font-weight: 300;
   }
 
   .workout-instructions div {
   display: flex;
   flex-direction: row;
   align-items: baseline;
+  gap: 15px;
   }
 
   .workout-instructions strong {
@@ -42,6 +51,9 @@
 
   .button-53:hover {
     background-color:rgb(230, 142, 131);
+    transition: background-color 0.0s ease;
+    margin-top: 5px;
+    transform: scale(1.20);
   }
 
   .button-5 {
@@ -51,13 +63,54 @@
 
   .button-5:hover {
     background-color:rgb(219, 131, 130);
+    transition: background-color 0.0s ease;
+    margin-top: 5px;
+    transform: scale(1.20);
   }
+  .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgb(0,0,0);
+      background-color: rgba(0,0,0,0.4);
+      padding-top: 60px;
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 500px;
+      border-radius: 10px;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
 </style>
 <div class="body-content">
   <h1 class="head-text"> 🏋️‍♂️Here's your random workout! Have fun! Let's go!🏋️</h1>
   <div class="workout-instructions">
 
-    <%= @workout_details.gsub(/\b(Name|Type|Muscle|Equipment|Difficulty|Instructions|Tip)\b/, '<strong>\1</strong>') %>
+    <%= @workout_details.gsub(/(\b(Name|Type|Muscle|Equipment|Difficulty|Instructions|Tip)\b):/, '<strong>\1</strong>:') %>
+
 
   </div>
 
