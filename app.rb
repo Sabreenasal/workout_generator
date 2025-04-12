@@ -6,6 +6,7 @@ require "json"
 
 get("/") do
   erb(:index)
+  #photos = ["images/workout_photo_1.jpg", "images/workout_photo_2.jpg", "images/workout_photo_3.jpg", "images/workout_photo_4.jpg", "images/workout_photo_5.jpg"]
 end
 
 

@@ -64,12 +64,12 @@
 <h1 class="head-text">Quick Workouts!</h1>
 
 <p class="body-text">🏋️‍♂️Need a quick gym workout? Click the button below to generate a random workout!🏋️</p>
-
+ <% photos = ["images/workout_photo_1.jpg", "images/workout_photo_2.jpg", "images/workout_photo_3.jpg", "images/workout_photo_4.jpg", "images/workout_photo_5.jpg"] %>
 <div>
   <form action="/random_workout">
     <button class="button-5" role="button">
       <i class="fas fa-random" style="color:rgb(152, 154, 168);"></i>Random Workouts
     </button>
   </form>
-  <img src="images/workout_photo_1.jpg" alt="A workout photo">
+  <img src=<%= photos.sample %>  alt="A workout photo"/>
 </div>
